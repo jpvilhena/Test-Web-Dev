@@ -1,0 +1,63 @@
+ul, ol {
+  list-style: none; /* Removes bullets/numbers */
+  padding: 0;       /* Removes browser default left padding */
+  margin: 0;        /* Removes browser default margins */
+}
+
+.carousel {
+  position: relative;
+  max-width: 1000px;
+  margin: 2rem auto;
+  overflow: hidden;
+  border-radius: 14px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.carousel-track img {
+  width: 100%;
+  flex-shrink: 0;
+  object-fit: cover;
+  min-height: 420px;
+}
+
+.carousel-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  border: none;
+  background: rgba(0, 0, 0, 0.45);
+  color: #fff;
+  font-size: 1.5rem;
+  padding: 0.65rem 0.9rem;
+  cursor: pointer;
+  border-radius: 50%;
+  z-index: 2;
+}
+
+.carousel-button:hover {
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.carousel-button.prev {
+  left: 1rem;
+}
+
+.carousel-button.next {
+  right: 1rem;
+}
+
+@media (max-width: 700px) {
+  .carousel-track img {
+    min-height: 260px;
+  }
+
+  .carousel-button {
+    font-size: 1.2rem;
+    padding: 0.5rem 0.7rem;
+  }
+}

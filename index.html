@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forensic Discovery</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Forensic Discovery Solutions</h1>
+        <ul>
+            <a href="index.html"><li>Pagina Inicial</li></a>
+            <a href="QuemSomos.html"><li>Quem Somos</li></a>
+            <a href="Produtos.html"><li>Produtos e Serviços</li></a>
+            <a href="FaleConosco.html"><li>Fale Conosco</li></a>
+        </ul>
+    </header>
+    <div class="carousel">
+        <div class="carousel-track">
+            <img src="https://images.unsplash.com/photo-1581089778998-5266350efc71?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkaWdpdGFsJTIwZm9yZW5zaWMlMjBpbnZlc3RpZ2F0aW9uJTIwY29tcHV0ZXJ8ZW58MXx8fHwxNzczMjcxNzkxfDA&ixlib=rb-4.1.0&q=80&w=1080" alt="Digital forensic investigation">
+            <img src="https://images.unsplash.com/photo-1768224656445-33d078c250b7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjeWJlcnNlY3VyaXR5JTIwZGF0YSUyMGFuYWx5c2lzfGVufDF8fHx8MTc3MzI3MTc5MXww&ixlib=rb-4.1.0&q=80&w=1080" alt="Cybersecurity data analysis">
+            <img src="https://images.unsplash.com/photo-1744868562210-fffb7fa882d9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzZXJ2ZXIlMjByb29tJTIwdGVjaG5vbG9neXxlbnwxfHx8fDE3NzMyNjI4MzF8MA&ixlib=rb-4.1.0&q=80&w=1080" alt="Technical operations room">
+        </div>
+        <button class="carousel-button prev" type="button" aria-label="Previous slide">&#10094;</button>
+        <button class="carousel-button next" type="button" aria-label="Next slide">&#10095;</button>
+    </div>
+    <script>
+        const track = document.querySelector('.carousel-track');
+        const slides = Array.from(track.children);
+        const prevButton = document.querySelector('.carousel-button.prev');
+        const nextButton = document.querySelector('.carousel-button.next');
+        let currentIndex = 0;
+        let autoSlide = null;
+
+        function moveTo(index) {
+            currentIndex = (index + slides.length) % slides.length;
+            track.style.transform = `translateX(-${currentIndex * 100}%)`;
+        }
+
+        function nextSlide() {
+            moveTo(currentIndex + 1);
+        }
+
+        function prevSlide() {
+            moveTo(currentIndex - 1);
+        }
+
+        function resetAutoSlide() {
+            clearInterval(autoSlide);
+            autoSlide = setInterval(nextSlide, 3000);
+        }
+
+        prevButton.addEventListener('click', () => {
+            prevSlide();
+            resetAutoSlide();
+        });
+
+        nextButton.addEventListener('click', () => {
+            nextSlide();
+            resetAutoSlide();
+        });
+
+        autoSlide = setInterval(nextSlide, 3000);
+    </script>
+</body>
+</html>
