@@ -18,11 +18,44 @@ ul, ol {
   transition: transform 0.5s ease;
 }
 
-.carousel-track img {
-  width: 100%;
+.carousel-slide {
+  position: relative;
+  min-width: 100%;
   flex-shrink: 0;
+}
+
+.carousel-slide img {
+  width: 100%;
+  display: block;
   object-fit: cover;
   min-height: 420px;
+}
+
+.carousel-caption {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 1.5rem;
+  color: #fff;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.45));
+}
+
+.carousel-caption h2 {
+  margin: 0 0 0.75rem;
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  text-shadow: 0 3px 10px rgba(0, 0, 0, 0.55);
+}
+
+.carousel-caption p {
+  margin: 0;
+  max-width: 700px;
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
 }
 
 .carousel-button {
@@ -33,7 +66,7 @@ ul, ol {
   background: rgba(0, 0, 0, 0.45);
   color: #fff;
   font-size: 1.5rem;
-  padding: 0.65rem 0.9rem;
+  padding: 0.6rem 1rem;
   cursor: pointer;
   border-radius: 50%;
   z-index: 2;
@@ -58,6 +91,5 @@ ul, ol {
 
   .carousel-button {
     font-size: 1.2rem;
-    padding: 0.5rem 0.7rem;
   }
 }
