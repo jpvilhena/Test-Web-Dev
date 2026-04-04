@@ -1,0 +1,31 @@
+* {
+  box-sizing: border-box;
+}
+
+body{
+  margin: 0;
+  background-color: #fff;
+}
+
+header{
+  display: flex;
+  background-color: #0f172a;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  margin: 0;
+  color: #fff;
+}
+
+.header-options {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+  margin: 0;
+  padding: 0;
+}
+
+.header-options a {
+  color: #fff;
+  text-decoration: none;
+}
