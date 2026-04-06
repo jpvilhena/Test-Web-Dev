@@ -5,6 +5,20 @@
 body{
   margin: 0;
   background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+  margin: 3rem;
+}
+
+form {
+  width: 40vw;
+  display: flex;
+  flex-direction: column;
 }
 
 header{
@@ -28,4 +42,16 @@ header{
 .header-options a {
   color: #fff;
   text-decoration: none;
+}
+
+footer{
+  color: #fff;
+  background-color: #0f172a;
+  padding: 2rem 3rem;
+}
+
+@media screen and (max-width: 800px){
+  form{
+    width: auto;
+  }
 }

@@ -18,28 +18,49 @@
     </header>
     <main>
         <h2>Fale Conosco</h2>
-        <form action="https://formsubmit.co/your-email@example.com" method="POST">
-        
-        <label for="name">Nome:</label>
-        <input type="text" id="name" name="name" required>
-
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required>
-
-        <label for="phone">Telefone:</label>
-        <input type="tel" id="phone" name="phone">
-
-        <label for="message">Mensagem:</label>
-        <textarea id="message" name="message" rows="6" required></textarea>
-
-        <!-- Optional: Honeypot to prevent spam -->
-        <input type="text" name="_honey" style="display:none;">
-
-        <button type="submit">Enviar</button>
-    </form>
+        <form action="https://formsubmit.co/your-email@example.com" method="POST" onsubmit="return validateForm()">
+            
+            <label for="name">Nome:</label>
+            <input type="text" id="name" name="name" required>
+            
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            
+            <label for="phone">Telefone:</label>
+            <input type="tel" id="phone" name="phone">
+            
+            <label for="message">Mensagem:</label>
+            <textarea id="message" name="message" rows="6" required></textarea>
+            
+            <!-- Optional: Honeypot to prevent spam -->
+            <input type="text" name="_honey" style="display:none;">
+            
+            <button type="submit">Enviar</button>
+        </form>
     </main>
     <footer>
         <p>© 2026 Forensic Discovery Solutions</p>
     </footer>
+    <script>
+        function validateForm() {
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const message = document.getElementById('message').value.trim();
+            
+            if (name === '') {
+                alert('Por favor, preencha o campo Nome.');
+                return false;
+            }
+            if (email === '') {
+                alert('Por favor, preencha o campo Email.');
+                return false;
+            }
+            if (message === '') {
+                alert('Por favor, preencha o campo Mensagem.');
+                return false;
+            }
+            return true;
+        }
+    </script>
 </body>
 </html>

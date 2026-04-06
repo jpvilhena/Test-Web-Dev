@@ -6,6 +6,13 @@
 body{
   margin: 0;
   background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
 }
 
 header{
@@ -152,23 +159,19 @@ footer{
   background-color: #0f172a;
   justify-content: space-between;
   padding: 2rem 3rem;
+  gap: 2rem;
 }
 
 footer ul{
   padding: 0;
+
+}
+
+footer li{
+  padding-bottom: 0.5rem;
 }
 
 footer a{
   text-decoration: none;
   color: #ffffff;
-}
-
-@media (max-width: 700px) {
-  .carousel-track img {
-    min-height: 260px;
-  }
-
-  .carousel-button {
-    font-size: 1.2rem;
-  }
 }
