@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Forensic Discovery</title>
+    <title>Forensic Discovery - Fale Conosco</title>
     <link rel="stylesheet" href="FaleConosco.css">
 </head>
 <body>
@@ -18,28 +18,147 @@
     </header>
     <main>
         <h2>Fale Conosco</h2>
-        <form action="https://formsubmit.co/your-email@example.com" method="POST">
-        
-        <label for="name">Nome:</label>
-        <input type="text" id="name" name="name" required>
 
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required>
+        <form id="contactForm" novalidate>
+            <div class="form-group">
+                <label for="name">Nome</label>
+                <input type="text" id="name" name="name">
+                <span class="error-message" id="nameError"></span>
+            </div>
 
-        <label for="phone">Telefone:</label>
-        <input type="tel" id="phone" name="phone">
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email">
+                <span class="error-message" id="emailError"></span>
+            </div>
 
-        <label for="message">Mensagem:</label>
-        <textarea id="message" name="message" rows="6" required></textarea>
+            <div class="form-group">
+                <label for="phone">Telefone</label>
+                <input type="tel" id="phone" name="phone" placeholder="(21) 99999-9999">
+                <span class="error-message" id="phoneError"></span>
+            </div>
 
-        <!-- Optional: Honeypot to prevent spam -->
-        <input type="text" name="_honey" style="display:none;">
+            <div class="form-group">
+                <label for="message">Mensagem</label>
+                <textarea id="message" name="message" rows="6"></textarea>
+                <span class="error-message" id="messageError"></span>
+            </div>
 
-        <button type="submit">Enviar</button>
-    </form>
+            <button type="submit">Enviar</button>
+        </form>
+
+        <div id="successMessage" class="success-message" style="display: none;">
+            Mensagem enviada com sucesso! Entraremos em contato em breve.
+        </div>
+
+        <section class="info-section">
+            <h3>Informações</h3>
+            <p>Email: contato@forensicdiscovery.com.br</p>
+            <p>Telefone: +55 (21) 3333-4444</p>
+            <p>Av. Rio Branco, 1000 Centro – Rio de Janeiro</p>
+        </section>
     </main>
+
     <footer>
-        <p>© 2026 Forensic Discovery Solutions</p>
+        <p>&copy; 2026 Forensic Discovery Solutions</p>
     </footer>
+
+    <script>
+        const form = document.getElementById('contactForm');
+        const successMessage = document.getElementById('successMessage');
+
+        function showError(fieldId, message) {
+            const errorSpan = document.getElementById(fieldId + 'Error');
+            const input = document.getElementById(fieldId);
+            errorSpan.textContent = message;
+            input.classList.add('input-error');
+        }
+
+        function clearError(fieldId) {
+            const errorSpan = document.getElementById(fieldId + 'Error');
+            const input = document.getElementById(fieldId);
+            errorSpan.textContent = '';
+            input.classList.remove('input-error');
+        }
+
+        function validateName() {
+            const name = document.getElementById('name').value.trim();
+            if (name === '') {
+                showError('name', 'O nome é obrigatório.');
+                return false;
+            }
+            if (name.length < 3) {
+                showError('name', 'O nome deve ter pelo menos 3 caracteres.');
+                return false;
+            }
+            clearError('name');
+            return true;
+        }
+
+        function validateEmail() {
+            const email = document.getElementById('email').value.trim();
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (email === '') {
+                showError('email', 'O email é obrigatório.');
+                return false;
+            }
+            if (!emailRegex.test(email)) {
+                showError('email', 'Informe um email válido.');
+                return false;
+            }
+            clearError('email');
+            return true;
+        }
+
+        function validatePhone() {
+            const phone = document.getElementById('phone').value.trim();
+            const phoneRegex = /^\(?\d{2}\)?\s?\d{4,5}-?\d{4}$/;
+            if (phone === '') {
+                showError('phone', 'O telefone é obrigatório.');
+                return false;
+            }
+            if (!phoneRegex.test(phone)) {
+                showError('phone', 'Informe um telefone válido. Ex: (21) 99999-9999');
+                return false;
+            }
+            clearError('phone');
+            return true;
+        }
+
+        function validateMessage() {
+            const message = document.getElementById('message').value.trim();
+            if (message === '') {
+                showError('message', 'A mensagem é obrigatória.');
+                return false;
+            }
+            if (message.length < 10) {
+                showError('message', 'A mensagem deve ter pelo menos 10 caracteres.');
+                return false;
+            }
+            clearError('message');
+            return true;
+        }
+
+        // Validação em tempo real
+        document.getElementById('name').addEventListener('blur', validateName);
+        document.getElementById('email').addEventListener('blur', validateEmail);
+        document.getElementById('phone').addEventListener('blur', validatePhone);
+        document.getElementById('message').addEventListener('blur', validateMessage);
+
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const isNameValid = validateName();
+            const isEmailValid = validateEmail();
+            const isPhoneValid = validatePhone();
+            const isMessageValid = validateMessage();
+
+            if (isNameValid && isEmailValid && isPhoneValid && isMessageValid) {
+                form.style.display = 'none';
+                successMessage.style.display = 'block';
+                form.reset();
+            }
+        });
+    </script>
 </body>
 </html>

@@ -5,6 +5,7 @@
 body{
   margin: 0;
   background-color: #fff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 header{
@@ -28,4 +29,82 @@ header{
 .header-options a {
   color: #fff;
   text-decoration: none;
+}
+
+main {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+main h2 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  color: #0f172a;
+}
+
+main h3 {
+  font-size: 1.3rem;
+  color: #0f172a;
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+
+main p {
+  color: #444;
+  line-height: 1.7;
+  margin-bottom: 15px;
+}
+
+main ul {
+  padding-left: 20px;
+  color: #444;
+}
+
+main ul li {
+  margin-bottom: 5px;
+}
+
+.edrm-section {
+  display: flex;
+  gap: 30px;
+  align-items: flex-start;
+  margin-top: 15px;
+}
+
+.edrm-text {
+  flex: 1;
+}
+
+.edrm-image {
+  flex: 1;
+  text-align: center;
+}
+
+.edrm-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+footer {
+  background-color: #0f172a;
+  color: #94a3b8;
+  text-align: center;
+  padding: 20px;
+  margin-top: 60px;
+}
+
+@media (max-width: 700px) {
+  .edrm-section {
+    flex-direction: column;
+  }
+
+  main {
+    padding: 20px 15px;
+  }
+
+  main h2 {
+    font-size: 1.4rem;
+  }
 }
