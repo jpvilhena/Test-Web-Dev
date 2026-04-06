@@ -127,7 +127,7 @@ img {
 
 .card-container{
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   gap: 1rem;
 }
 
@@ -150,8 +150,7 @@ footer{
   display: flex;
   color: #fff;
   background-color: #0f172a;
-  justify-content: center;
-  gap: 5vw;
+  justify-content: space-between;
   padding: 2rem 3rem;
 }
 
