@@ -10,9 +10,9 @@
     <header>
         <h1>Forensic Discovery Solutions</h1>
         <ul class="header-options">
-            <a href="QuemSomos.html"><li>Quem Somos</li></a>
-            <a href="Produtos.html"><li>Produtos e Serviços</li></a>
-            <a href="FaleConosco.html"><li>Fale Conosco</li></a>
+            <a href="quemSomos.html"><li>Quem Somos</li></a>
+            <a href="produtos.html"><li>Produtos e Serviços</li></a>
+            <a href="faleConosco.html"><li>Fale Conosco</li></a>
         </ul>
     </header>
     <main>
@@ -43,44 +43,7 @@
         <button class="carousel-button prev" type="button" aria-label="Previous slide">&#10094;</button>
         <button class="carousel-button next" type="button" aria-label="Next slide">&#10095;</button>
     </div>
-        <script>
-            const track = document.querySelector('.carousel-track');
-            const slides = Array.from(track.children);
-            const prevButton = document.querySelector('.carousel-button.prev');
-            const nextButton = document.querySelector('.carousel-button.next');
-            let currentIndex = 0;
-            let autoSlide = null;
-
-                function moveTo(index) {
-                    currentIndex = (index + slides.length) % slides.length;
-                    track.style.transform = `translateX(-${currentIndex * 100}%)`;
-                }
-
-                function nextSlide() {
-                    moveTo(currentIndex + 1);
-                }
-
-                function prevSlide() {
-                    moveTo(currentIndex - 1);
-                }
-
-                function resetAutoSlide() {
-                    clearInterval(autoSlide);
-                    autoSlide = setInterval(nextSlide, 5000);
-                }
-
-                prevButton.addEventListener('click', () => {
-                    prevSlide();
-                    resetAutoSlide();
-                });
-
-                nextButton.addEventListener('click', () => {
-                    nextSlide();
-                    resetAutoSlide();
-                });
-
-                autoSlide = setInterval(nextSlide, 5000);
-        </script>
+        <script src="carousel.js"></script>
         <div class="text-container">
             <h2>Bem-vindo(a),</h2>
             <p>Somos especialistas em eDiscovery e Investigação forense digital, oferecendo soluções completas para coleta, preservação e análise de evidências digitais.</p>
@@ -113,9 +76,9 @@
             <h4>Links</h4>
             <ul class="footer-options">
                 <a href="index.html"><li>Pagina Inicial</li></a>
-                <a href="QuemSomos.html"><li>Quem Somos</li></a>
-                <a href="Produtos.html"><li>Produtos e Serviços</li></a>
-                <a href="FaleConosco.html"><li>Fale Conosco</li></a>
+                <a href="quemSomos.html"><li>Quem Somos</li></a>
+                <a href="produtos.html"><li>Produtos e Serviços</li></a>
+                <a href="faleConosco.html"><li>Fale Conosco</li></a>
             </ul>
        </div>
        <div>
