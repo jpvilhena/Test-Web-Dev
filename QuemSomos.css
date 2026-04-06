@@ -13,7 +13,7 @@ header{
   background-color: #0f172a;
   align-items: center;
   justify-content: space-between;
-  padding: 10px 20px;
+  padding: 10px 10%;
   margin: 0;
   color: #fff;
 }
@@ -73,11 +73,11 @@ main ul li {
 }
 
 .edrm-text {
-  flex: 1;
+  flex: 2;
 }
 
 .edrm-image {
-  flex: 1;
+  flex: 3;
   text-align: center;
 }
 
@@ -87,11 +87,17 @@ main ul li {
   border-radius: 8px;
 }
 
+.img-source {
+  font-size: 0.8rem;
+  color: #888;
+  margin-top: 5px;
+  font-style: italic;
+}
+
 footer {
   background-color: #0f172a;
   color: #94a3b8;
-  text-align: center;
-  padding: 20px;
+  padding: 20px 10%;
   margin-top: 60px;
 }
 

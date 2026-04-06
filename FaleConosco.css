@@ -13,7 +13,7 @@ header{
   background-color: #0f172a;
   align-items: center;
   justify-content: space-between;
-  padding: 10px 20px;
+  padding: 10px 10%;
   margin: 0;
   color: #fff;
 }
@@ -134,8 +134,7 @@ button[type="submit"]:hover {
 footer {
   background-color: #0f172a;
   color: #94a3b8;
-  text-align: center;
-  padding: 20px;
+  padding: 20px 10%;
   margin-top: 60px;
 }
 

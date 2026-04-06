@@ -13,7 +13,6 @@
             <a href="index.html"><li>Pagina Inicial</li></a>
             <a href="QuemSomos.html"><li>Quem Somos</li></a>
             <a href="Produtos.html"><li>Produtos e Serviços</li></a>
-            <a href="FaleConosco.html"><li>Fale Conosco</li></a>
         </ul>
     </header>
     <main>
@@ -83,8 +82,13 @@
 
         function validateName() {
             const name = document.getElementById('name').value.trim();
+            const nameRegex = /^[A-Za-zÀ-ÿ\s]+$/;
             if (name === '') {
                 showError('name', 'O nome é obrigatório.');
+                return false;
+            }
+            if (!nameRegex.test(name)) {
+                showError('name', 'O nome deve conter apenas letras.');
                 return false;
             }
             if (name.length < 3) {
