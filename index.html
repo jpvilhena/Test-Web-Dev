@@ -67,7 +67,7 @@
 
                 function resetAutoSlide() {
                     clearInterval(autoSlide);
-                    //autoSlide = setInterval(nextSlide, 5000);
+                    autoSlide = setInterval(nextSlide, 5000);
                 }
 
                 prevButton.addEventListener('click', () => {
@@ -80,30 +80,28 @@
                     resetAutoSlide();
                 });
 
-                //autoSlide = setInterval(nextSlide, 5000);
+                autoSlide = setInterval(nextSlide, 5000);
         </script>
-        <div>
+        <div class="text-container">
             <h2>Bem-vindo</h2>
             <p>Somos especialistas em eDiscovery e Investigação forense digital, oferecendo soluções completas para coleta, preservação e análise de evidências digitais.</p>
-            <div>
-                <ul>
-                    <li>
-                        <h3>Segurança e Confiabilidade</h3>
-                        <p class="card-p">Processos certificados e conformes com as melhores práticas internacionais.</p>
-                    </li>
-                    <li>
-                        <h3>Análise Profunda</h3>
-                        <p class="card-p">Tecnologia de ponta para investigação e descoberta de evidências críticas.</p>
-                    </li>
-                    <li>
-                        <h3>Gestão de Grandes Volumes</h3>
-                        <p class="card-p">Capacidade de processar terabytes de dados com eficiência e precisão.</p>
-                    </li>
-                    <li>
-                        <h3>Compliance e Governança</h3>
-                        <p class="card-p">Suporte especializado para requisitos legais e regulatórios.</p>
-                    </li>
-                </ul>
+            <div class="card-container">
+                <div class="card">
+                    <h3>Segurança e Confiabilidade</h3>
+                    <p class="card-p">Processos certificados e conformes com as melhores práticas internacionais.</p>
+                </div>
+                <div class="card">
+                    <h3>Análise Profunda</h3>
+                    <p class="card-p">Tecnologia de ponta para investigação e descoberta de evidências críticas.</p>
+                </div>
+                <div class="card">
+                    <h3>Gestão de Grandes Volumes</h3>
+                    <p class="card-p">Capacidade de processar terabytes de dados com eficiência e precisão.</p>
+                </div>
+                <div class="card">
+                    <h3>Compliance e Governança</h3>
+                    <p class="card-p">Suporte especializado para requisitos legais e regulatórios.</p>
+                </div>
             </div>
         </div>
     </main>
